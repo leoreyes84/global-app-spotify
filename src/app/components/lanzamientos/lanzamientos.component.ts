@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lanzamientos',
@@ -10,14 +11,21 @@ export class LanzamientosComponent {
 
   nuevosLanzamientos: any[] = [];
 
-  constructor(private spotifyService: SpotifyService) { 
+  constructor(private spotifyService: SpotifyService,
+              private router: Router) { 
 
     this.spotifyService.getUltimosLanzamientos()
-        .subscribe(respuesta =>{
-          
+        .subscribe((respuesta: any) =>{
+          console.log(respuesta.albums.items);
+          this.nuevosLanzamientos =respuesta.albums.items
         });
     
 
+  }
+
+  mostrarArtista(idArtista:any){
+    console.log('lreyes: '+idArtista);
+    this.router.navigate(['artista', idArtista]);
   }
 
   
