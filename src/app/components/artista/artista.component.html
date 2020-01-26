@@ -1,3 +1,38 @@
-<p>
-  artista works!
-</p>
+<div class="row" *ngIf="ready">
+  <div class="col-2">
+    <img [src]="artista.images[2].url" class="img-thumbnail img-circle">
+  </div>
+  
+  <div class="col-">
+    <h3>{{artista.name}}</h3>
+  </div>
+  
+  <div class="col-4 text-right">
+    <button routerLink="/lanzamientos" class="btn btn-primary">
+      Regresar
+    </button>
+  </div>
+</div>
+
+<div class="row m-4">
+  <div class="col">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Foto</th>
+          <th>Album</th>
+          <th>Canción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cancion of topCanciones">
+          <td>
+            <img [src]="cancion.album.images[2].url" >
+          </td>
+          <td>{{cancion.album.name}}</td>
+          <td>{{cancion .name}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

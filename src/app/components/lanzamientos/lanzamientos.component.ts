@@ -16,7 +16,7 @@ export class LanzamientosComponent {
 
     this.spotifyService.getUltimosLanzamientos()
         .subscribe((respuesta: any) =>{
-          console.log(respuesta.albums.items);
+          // console.log(respuesta.albums.items);
           this.nuevosLanzamientos =respuesta.albums.items
         });
     
@@ -24,10 +24,7 @@ export class LanzamientosComponent {
   }
 
   mostrarArtista(idArtista:any){
-    console.log('lreyes: '+idArtista);
     this.router.navigate(['artista', idArtista]);
   }
-
-  
 
 }

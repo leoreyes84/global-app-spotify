@@ -7,13 +7,30 @@ import { map } from 'rxjs/operators'
 })
 export class SpotifyService {
 
+  urlService = 'https://api.spotify.com/v1';
+  token = 'Bearer BQD6iL1d9oCdYJ4oXQEq3W9ZNLMe7y-p41Oq3vEqepliBIXdSxKnkOYq49lQNn8a9yTrN7d4ghMfJck_oFg';
+
   constructor(private http:HttpClient) { }
 
   getUltimosLanzamientos(){
     const headers = new HttpHeaders({
-      'Authorization':'Bearer BQALmHQat1ePPxyGz45BwBymvOTFO-wFRvHm6lcM2X1lgnDMxmk9qaUmopzag0qFxUe4yisH7VitArCO-bg'
+      'Authorization': this.token
     });
-    return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=9', { headers });
+    return this.http.get(this.urlService +'/browse/new-releases?limit=9', { headers });
+  }
+
+  getArtista( id: string ){
+    const headers = new HttpHeaders({
+      'Authorization': this.token
+    });
+    return this.http.get(this.urlService +'/artists/'+id, { headers });
+  }
+
+  getTopCanciones( id: string ){
+    const headers = new HttpHeaders({
+      'Authorization': this.token
+    });
+    return this.http.get(this.urlService +'/artists/'+id+'/top-tracks?country=es', { headers });
   }
 
 }
