@@ -5,7 +5,7 @@ import { HttpClientModule } from'@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ArtistaComponent } from './components/artista/artista.component';
-import { InicioComponent } from './components/inicio/inicio.component';
+import { LanzamientosComponent } from './components/lanzamientos/lanzamientos.component';
 import { NavbarComponent } from './components/compartido/navbar/navbar.component';
 import { ROUTES } from './app.routes';
 
@@ -15,8 +15,8 @@ import { ROUTES } from './app.routes';
   declarations: [
     AppComponent,
     ArtistaComponent,
-    InicioComponent,
-    NavbarComponent
+    NavbarComponent,
+    LanzamientosComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { InicioComponent } from './components/inicio/inicio.component';
+import { LanzamientosComponent } from './components/lanzamientos/lanzamientos.component';
 
 export const ROUTES: Routes = [
-    { path: 'inicio', component: InicioComponent },
-    { path: '', pathMatch: 'full', redirectTo: 'inicio' },
-    { path: '**', pathMatch: 'full', redirectTo: 'inicio' }
+    { path: 'lanzamientos', component: LanzamientosComponent },
+    { path: '', pathMatch: 'full', redirectTo: 'lanzamientos' },
+    { path: '**', pathMatch: 'full', redirectTo: 'lanzamientos' }
 ];
